@@ -6,7 +6,7 @@ find_directories(){
 		#if the file is a directory
 		if [[ -d $f ]] 
 		then
-			ls -l "$f$2" 2> listerrors.txt
+			ls -i "$f$2" 2> listerrors.txt
 			
 			find_directories $f $2
 
@@ -17,7 +17,7 @@ find_directories(){
 for a in "$@"
 do
 	#ls current directory
-	ls -l $a 2> listerrors.txt
+	ls -i $a 2> listerrors.txt
 	#ls recursive directories
 	find_directories . $a
 done
